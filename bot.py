@@ -6,6 +6,7 @@ import time
 import json
 
 import os
+import sys
 
 import requests
 from bs4 import BeautifulSoup
@@ -267,23 +268,30 @@ color_map = {
     "#FF4500FF": 2,  # bright red
     "#FFA800FF": 3,  # orange
     "#FFD635FF": 4,  # yellow
+                   
     "#00A368FF": 6,  # darker green
     "#00CC78FF": 7,
     "#7EED56FF": 8,  # lighter green
     "#00756FFF": 9,
     "#009EAAFF": 10,
+                    
     "#2450A4FF": 12,  # darkest blue
     "#3690EAFF": 13,  # medium normal blue
     "#51E9F4FF": 14,  # cyan
     "#493AC1FF": 15,
     "#6A5CFFFF": 16,
+                    
     "#811E9FFF": 18,  # darkest purple
     "#B44AC0FF": 19,  # normal purple
+                    
+                    
     "#FF3881FF": 22,
     "#FF99AAFF": 23,  # pink
     "#6D482FFF": 24,
     "#9C6926FF": 25,  # brown
+                    
     "#000000FF": 27,  # black
+                    
     "#898D90FF": 29,  # grey
     "#D4D7D9FF": 30,  # light grey
     "#FFFFFFFF": 31,  # white
@@ -303,7 +311,7 @@ init_rgb_colors_array()
 
 place = Placer()
 
-version = "0.3.2"
+version = "Derpy0.4.2"
 
 def trigger():
   # Behold, the dirtiest code I ever wrote
@@ -320,7 +328,8 @@ def trigger():
     new_origin = urllib.urlopen('https://raw.githubusercontent.com/Cantersoft/PonyPixel/master/coordinates.txt?t={}'.format(time.time())).read().decode("utf-8").replace("\n", "").split(',')
     origin = (int(new_origin[0]), int(new_origin[1]))
     size = (int(new_origin[2]), int(new_origin[3]))
-    canvas = int(new_origin[4]))
+    canvas = int(new_origin[4])
+	
 
     #ver = urllib.urlopen('https://raw.githubusercontent.com/CloudburstSys/place.conep.one/master/version.txt').read().decode("utf-8").replace("\n", "")
 
@@ -338,6 +347,7 @@ def trigger():
   (img, origin, size, canvas) = getData()
   
   if(img == None):
+    exit()      
     return
 
   (ox, oy) = origin
@@ -399,6 +409,7 @@ while True:
     timestampOfPlaceAttempt = trigger()
 
     if((timestampOfPlaceAttempt - time.time()) > 86400):
+                                                                                                                                                                                                         
       print(" ")
       print(" ")
       print("-------------------------------")
