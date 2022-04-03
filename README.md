@@ -1,4 +1,4 @@
-# PonyPixel
+# PonyPixel for Derpy
 Derpy bot
 
 ## How to run
