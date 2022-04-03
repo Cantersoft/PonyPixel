@@ -312,12 +312,13 @@ def trigger():
     urllib.urlopen = urllib.request.urlopen
 
   def getData():
-    im = urllib.urlopen('https://raw.githubusercontent.com/Cantersoft/FixPony/main/template.png').read()
+    im = urllib.urlopen('https://raw.githubusercontent.com/Cantersoft/PonyPixel/master/template.png').read()
     img = Image.open(BytesIO(im)).convert("RGBA").load()
-		
-    origin = (int(950), int(358))
-    size = (int(49), int(45))
-    canvas = int(1)
+	
+    new_origin = urllib.urlopen('https://raw.githubusercontent.com/Cantersoft/PonyPixel/master/coordinates.txt?t={}'.format(time.time())).read().decode("utf-8").replace("\n", "").split(',')
+    origin = (int(new_origin[0]), int(new_origin[1]))
+    size = (int(new_origin[2]), int(new_origin[3]))
+    canvas = int(new_origin[4]))
 
     #ver = urllib.urlopen('https://raw.githubusercontent.com/CloudburstSys/place.conep.one/master/version.txt').read().decode("utf-8").replace("\n", "")
 
