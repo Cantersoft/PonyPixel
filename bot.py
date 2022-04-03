@@ -315,7 +315,7 @@ def trigger():
     im = urllib.urlopen('https://raw.githubusercontent.com/Cantersoft/FixPony/main/template.png').read()
     img = Image.open(BytesIO(im)).convert("RGBA").load()
 		
-    origin = (int(949), int(358))
+    origin = (int(950), int(358))
     size = (int(49), int(45))
     canvas = int(1)
 
