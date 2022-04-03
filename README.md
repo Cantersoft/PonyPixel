@@ -1,5 +1,5 @@
 # PonyPixel for Derpy
-Derpy bot
+This bot will only protect Derpy
 
 ## How to run
 * Install Python 3. Python 2 will NOT WORK. It **MUST** be Python 3.
